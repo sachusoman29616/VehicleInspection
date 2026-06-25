@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy — UniInspect</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Segoe UI',sans-serif;background:#f8fafc;color:#334155;line-height:1.7;}
+    .header{background:#0f172a;padding:24px 20px;text-align:center;}
+    .logo{font-size:20px;font-weight:800;color:#f1f5f9;letter-spacing:-0.5px;}
+    .logo-sub{font-size:12px;color:#64748b;margin-top:4px;text-transform:uppercase;letter-spacing:0.08em;}
+    .container{max-width:720px;margin:0 auto;padding:40px 20px;}
+    .title{font-size:28px;font-weight:800;color:#0f172a;margin-bottom:8px;letter-spacing:-0.5px;}
+    .updated{font-size:13px;color:#64748b;margin-bottom:36px;}
+    .section{margin-bottom:32px;}
+    .section h2{font-size:16px;font-weight:700;color:#0f172a;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid #e2e8f0;}
+    .section p{font-size:14px;color:#475569;margin-bottom:10px;}
+    .section ul{padding-left:20px;margin-bottom:10px;}
+    .section ul li{font-size:14px;color:#475569;margin-bottom:6px;}
+    .highlight{background:#eff6ff;border-left:4px solid #3b82f6;padding:14px 16px;border-radius:0 8px 8px 0;margin-bottom:10px;}
+    .highlight p{color:#1e40af;margin:0;}
+    .footer{background:#0f172a;padding:20px;text-align:center;margin-top:60px;}
+    .footer p{font-size:12px;color:#64748b;}
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo">🛡️ UniInspect</div>
+  <div class="logo-sub">Vehicle Inspection · Policy Renewal</div>
+</div>
+
+<div class="container">
+  <h1 class="title">Privacy Policy</h1>
+  <p class="updated">Last updated: June 25, 2026</p>
+
+  <div class="highlight">
+    <p>UniInspect is a vehicle inspection application used by insurance companies for policy renewal inspections. We are committed to protecting the privacy of our users.</p>
+  </div>
+
+  <div class="section">
+    <h2>1. Who We Are</h2>
+    <p>UniInspect is a vehicle inspection tool developed for insurance branch offices. The app enables field inspectors to capture timestamped, GPS-tagged photos of vehicles and submit inspection reports to their designated office.</p>
+  </div>
+
+  <div class="section">
+    <h2>2. Information We Collect</h2>
+    <p>When you use UniInspect, we collect the following information:</p>
+    <ul>
+      <li><strong>Google Account Information:</strong> Your name and email address, obtained through Google Sign-In, to identify you as the inspector.</li>
+      <li><strong>Vehicle Information:</strong> Registration number, make/model, owner name, and expired policy number entered during inspection.</li>
+      <li><strong>Location Data (GPS):</strong> GPS coordinates and place name at the time each photo is captured, to verify the inspection location.</li>
+      <li><strong>Photos:</strong> Vehicle photos captured during inspection, stamped with timestamp and GPS location.</li>
+      <li><strong>Device Information:</strong> Basic device fingerprint (screen size, browser, timezone) to track report submissions.</li>
+      <li><strong>Submission Data:</strong> Report ID, submission timestamp, and office code used during submission.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>3. How We Use Your Information</h2>
+    <p>The information collected is used solely for the following purposes:</p>
+    <ul>
+      <li>To generate vehicle inspection PDF reports</li>
+      <li>To send inspection reports to the designated insurance office email</li>
+      <li>To record inspection submissions in the office database (Google Sheets)</li>
+      <li>To verify the authenticity of inspection reports</li>
+      <li>To identify the inspector who submitted each report</li>
+      <li>To stamp GPS location and timestamp on inspection photos</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>4. Gmail API Usage</h2>
+    <p>UniInspect uses the Gmail API to send inspection report emails directly from the inspector's Gmail account. Specifically:</p>
+    <ul>
+      <li>We request permission to <strong>send emails on your behalf</strong> (gmail.send scope)</li>
+      <li>We only send inspection report emails — we never read, modify, or delete your emails</li>
+      <li>We never access your inbox or any existing emails</li>
+      <li>Gmail access is used exclusively to send the inspection report PDF to the office</li>
+      <li>We do not store your Gmail credentials or access tokens permanently</li>
+    </ul>
+    <div class="highlight">
+      <p>UniInspect's use of Gmail API is limited to sending inspection reports. We do not use Gmail data for advertising or any purpose beyond the inspection workflow.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>5. Data Storage</h2>
+    <ul>
+      <li><strong>Google Sheets:</strong> Report metadata (Report ID, inspector name, GPS, timestamp) is stored in a Google Sheets database accessible only to the insurance company administrator.</li>
+      <li><strong>Local Device Storage:</strong> Office code and inspector profile are stored locally on the device for convenience. No photos or sensitive data are stored locally after submission.</li>
+      <li><strong>No Cloud Photo Storage:</strong> Vehicle photos are not stored on any external server. They are included in the PDF report and emailed directly to the office.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>6. Data Sharing</h2>
+    <p>We do not sell, trade, or share your personal information with any third parties except:</p>
+    <ul>
+      <li><strong>Insurance Office:</strong> The inspection report (including photos, GPS, and inspector details) is sent to the designated insurance branch office email.</li>
+      <li><strong>Google Services:</strong> We use Google Sign-In (authentication) and Gmail API (email sending). Google's privacy policy applies to these services.</li>
+      <li><strong>OpenStreetMap/Nominatim:</strong> GPS coordinates are sent to OpenStreetMap's Nominatim service to retrieve place names. No personal data is shared.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>7. Data Retention</h2>
+    <ul>
+      <li>Inspection report metadata is retained in Google Sheets as long as needed by the insurance company for audit purposes.</li>
+      <li>Photos are not retained after the report is sent — they exist only in the emailed PDF.</li>
+      <li>Local device data (office code, profile) can be cleared by signing out of the app.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>8. Security</h2>
+    <p>We implement multiple security measures to protect inspection data:</p>
+    <ul>
+      <li>GPS coordinates stamped on every photo to verify inspection location</li>
+      <li>Unique Report ID generated for each inspection</li>
+      <li>Inspector Gmail identity recorded with every submission</li>
+      <li>QR code on PDF for report verification</li>
+      <li>Report data saved to secure Google Sheets database on submission</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>9. Your Rights</h2>
+    <p>You have the right to:</p>
+    <ul>
+      <li>Sign out of the app at any time, which clears locally stored data</li>
+      <li>Revoke Gmail API access at any time via your Google Account settings (myaccount.google.com → Security → Third-party apps)</li>
+      <li>Request deletion of your inspection records by contacting your branch office administrator</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>10. Children's Privacy</h2>
+    <p>UniInspect is intended for use by insurance professionals only. We do not knowingly collect information from anyone under 18 years of age.</p>
+  </div>
+
+  <div class="section">
+    <h2>11. Changes to This Policy</h2>
+    <p>We may update this privacy policy from time to time. Any changes will be reflected on this page with an updated date. Continued use of the app constitutes acceptance of the updated policy.</p>
+  </div>
+
+  <div class="section">
+    <h2>12. Contact Us</h2>
+    <p>If you have any questions about this privacy policy or how we handle your data, please contact:</p>
+    <ul>
+      <li><strong>Application:</strong> UniInspect — Vehicle Inspection System</li>
+      <li><strong>Hosted at:</strong> https://sachusoman29616.github.io/VehicleInspection</li>
+      <li><strong>Developer:</strong> sachusoman@gmail.com</li>
+    </ul>
+  </div>
+
+</div>
+
+<div class="footer">
+  <p>🛡️ UniInspect — Vehicle Inspection · Policy Renewal</p>
+  <p style="margin-top:6px;">© 2026 UniInspect. All rights reserved.</p>
+</div>
+
+</body>
+</html>
