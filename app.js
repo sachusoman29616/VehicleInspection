@@ -827,7 +827,7 @@ function App(){
 React.createElement("div",{style:S.officePill},"🏢 "+(office?office.name:""))
       ),
       React.createElement("div",{style:S.fromBadge},
-        React.createElement("span",null,"Inspector: "+(gmailUser?gmailUser.name:"")),
+        React.createElement("span",null,"Inspector),
         placeName&&React.createElement("span",{style:{color:"#86efac"}},placeName)
       )
     ),
