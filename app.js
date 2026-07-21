@@ -1,6 +1,6 @@
 const { useState, useRef, useCallback, useEffect } = React;
 
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzphBEqR6ibSCVo6dc70N7h5Cj2jrh_Cay2TkaT8x0XAX5wzcxoaYP3AmgMzgmN0mhgQA/exec"; // Paste your deployed Apps Script URL here
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzHkbt7x0T5bLNNFCNjODweuImNkbUr-_SN7LA0v3y21eu4Lg6GGbauao0O2c5E2nwFKA/exec"; // Paste your deployed Apps Script URL here
 
 const PHOTO_SLOTS = [
   { id:"front",    label:"Front",         icon:"⬆️", required:true,  hint:"Full front of the vehicle" },
