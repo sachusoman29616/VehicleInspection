@@ -18,6 +18,10 @@ var OFFICE_CODES = {
     name  : "UIIC BO SULTHAN BATHERY",
     email : "uibathery@gmail.com",
   },
+"000000": {
+    name  : "TEST",
+    email : "ssonu2991@gmail.com",
+  },
 };
 
 const PHOTO_SLOTS = [
