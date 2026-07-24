@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+  <meta name="theme-color" content="#0f172a"/>
+  <meta name="mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <meta name="apple-mobile-web-app-title" content="UniInspect"/>
+  <meta name="description" content="Vehicle Inspection App for Insurance Policy Renewal"/>
+
+  <title>UniInspect — Vehicle Inspection</title>
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="manifest.json"/>
+
+  <!-- Splash screen background -->
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{background:#0f172a;font-family:'Inter','Segoe UI',sans-serif;}
+    #splash{
+      position:fixed;inset:0;background:#0f172a;
+      display:flex;flex-direction:column;
+      align-items:center;justify-content:center;
+      z-index:9999;transition:opacity 0.4s;
+    }
+    #splash.hide{opacity:0;pointer-events:none;}
+    .splash-icon{font-size:72px;margin-bottom:20px;}
+    .splash-title{font-size:28px;font-weight:800;color:#f1f5f9;letter-spacing:-0.5px;}
+    .splash-sub{font-size:12px;color:#64748b;margin-top:6px;text-transform:uppercase;letter-spacing:0.1em;}
+    .splash-bar{width:120px;height:4px;background:#1e293b;border-radius:4px;margin-top:40px;overflow:hidden;}
+    .splash-fill{height:100%;background:linear-gradient(90deg,#3b82f6,#06b6d4);border-radius:4px;animation:load 1.2s ease-in-out infinite;}
+    @keyframes load{0%{width:0%}50%{width:100%}100%{width:0%;margin-left:100%}}
+    @keyframes loadspin{to{transform:rotate(360deg)}}
+  </style>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+</head>
+<body>
+
+  <!-- Splash Screen -->
+  <div id="splash">
+    <div class="splash-icon">🛡️</div>
+    <div class="splash-title">UniInspect</div>
+    <div class="splash-sub">Vehicle Inspection System</div>
+    <div class="splash-bar"><div class="splash-fill"></div></div>
+  </div>
+
+  <div id="root"></div>
+
+  <!-- Load app -->
+  <script type="text/babel" src="app.js"></script>
+
+  <!-- PWA: Register Service Worker + Hide Splash -->
+  <script>
+    // Register service worker
+    if("serviceWorker" in navigator) {
+      window.addEventListener("load", function() {
+        navigator.serviceWorker.register("/VehicleInspection/service-worker.js")
+          .then(function(reg) { console.log("SW registered"); })
+          .catch(function(e) { console.log("SW error", e); });
+      });
+    }
+
+    // Hide splash when app loads
+    window.addEventListener("load", function() {
+      setTimeout(function() {
+        var splash = document.getElementById("splash");
+        if(splash) {
+          splash.classList.add("hide");
+          setTimeout(function(){ splash.remove(); }, 400);
+        }
+      }, 1500);
+    });
+  </script>
+</body>
+</html>
